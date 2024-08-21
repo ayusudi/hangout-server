@@ -2,6 +2,9 @@
 
 > https://hangout-ai-c81439a5ea16.herokuapp.com
 
+## Documentation
+For more information, visit the [documentation](https://hangout-ai-c81439a5ea16.herokuapp.com/docs).
+
 ## List Enpoints 
 
 | METHOD | ENDPOINT | AUTH | AUTHZ | DESCRIPTION |
