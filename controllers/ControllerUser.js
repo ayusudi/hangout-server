@@ -1,6 +1,7 @@
 const axios = require("axios")
 const { signPayloadIntoToken } = require("../helpers/jwt")
 const { User, Chat } = require("../models")
+const moment = require("moment")
 class ControllerUser {
   static async socialLogin(req, res, next) {
     try {
@@ -71,23 +72,22 @@ class ControllerUser {
         "Kuala Lumpur": "MY"
       }
       let country = code[location]
-      let day = new Date(date).toLocaleDateString('en-EN', {
-        weekday: 'long',
-      })
 
       const config = {
-        method: 'get',
+        method: 'post',
         url: 'https://hangout.llm.api.laam.my.id',
         maxBodyLength: Infinity,
         headers: {
           'accept': 'application/json'
         },
         params: {
-          day,
+          date: moment(new Date(date)).format('YYYY-MM-DD'),
           country,
           startTime,
           endTime,
-          address: address || "Buaran Plaza"
+          address: address || "Buaran Plaza",
+          lat: latlng.lat,
+          lng: latlng.lng,
         }
       };
       let { data } = await axios(config)
