@@ -75,7 +75,7 @@ class ControllerUser {
 
       const config = {
         method: 'post',
-        url: 'http://localhost:8000/generate',
+        url: 'https://hangout.llm.api.laam.my.id/generate',
         maxBodyLength: Infinity,
         headers: {
           'accept': 'application/json'
