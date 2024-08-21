@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
     let { access_token } = req.headers
     if (!access_token) throw { name: "Token" }
     let { email } = verifyTokenIntoPayload(access_token)
-    let result = await User.findOne({ email })
+    let result = await User.findOne({ where: { email } })
     if (!result) throw { name: "FORBIDDEN" }
     req.user = { email, id: result.id }
     next()
