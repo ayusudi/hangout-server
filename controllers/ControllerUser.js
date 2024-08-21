@@ -75,7 +75,7 @@ class ControllerUser {
 
       const config = {
         method: 'post',
-        url: 'https://hangout.llm.api.laam.my.id',
+        url: 'http://localhost:8000/generate',
         maxBodyLength: Infinity,
         headers: {
           'accept': 'application/json'
@@ -91,7 +91,7 @@ class ControllerUser {
         }
       };
       let { data } = await axios(config)
-      const { response, metadata } = data
+      const { response, metadata, weather_calculation } = data
       let duration = ControllerUser.calculateDuration(startTime, endTime)
       let promptSystem = {
         role: "user",
@@ -116,7 +116,8 @@ class ControllerUser {
           {
             role: "assistant",
             content: response,
-            metadata: list
+            metadata: list,
+            weather_calculation,
           }
         ]
       })
