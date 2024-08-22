@@ -14,7 +14,7 @@ This server powers Hangout AI, an AI-powered travel guide that generates persona
 # Table of contents
 - [Documentation](#documentation)
 - [List Enpoints ](#list-enpoints)
-- [Models DB For This Server](##models-db-for-this-server)
+- [Models DB For This Server](#models-db-for-this-server)
 - [How To Run The App Locally ](#how-to-run-the-app-locally)
 - [ENV Template](#env-template)
 - [Config](#configconfigjson)
